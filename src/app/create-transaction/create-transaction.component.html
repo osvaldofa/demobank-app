@@ -1,0 +1,33 @@
+<div>
+  &nbsp;&nbsp;
+  <h3>Transaction Creation</h3>
+  <table>
+    <tr>
+        <td style="width: 2%;"></td>
+        <td>Account: </td>
+        <td><input [(ngModel)]="this.accountNumber" type="text" style="width: 60%;" disabled></td>
+    </tr>
+    <tr>
+      <td style="width: 2%;"></td>
+      <td>Operation: </td>
+      <td>
+          <select [(ngModel)]="this.transactionType" style="width: 63%;">
+              <option *ngFor="let type of this.transactionTypes">{{type}}</option>
+          </select>
+      </td>
+  </tr>
+  <tr>
+    <td style="width: 2%;"></td>
+    <td>Value: </td>
+    <td><input [(ngModel)]="this.value" type="text" style="width: 60%;"></td>
+  </tr>
+  <tr>
+    <td style="width: 2%;"></td>
+    <td></td>
+    <td>
+      <button (click)="createTransaction()">Create</button>
+      <button (click)="this.goHome()">Cancel</button>
+    </td>
+  </tr>
+  </table>
+</div>

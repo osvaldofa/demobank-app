@@ -1,0 +1,24 @@
+<h3> DemoBank Accounts: </h3>
+
+<table style="width: 100%;">
+  <thead>
+    <th style="width: 10%;" align="left">Number</th>
+    <th style="width: 30%;" align="left">Customer (Surname, Name)</th>
+    <th style="width: 10%;" align="left">Balance</th>
+    <th style="width: 50%;" align="right">&nbsp;</th>
+  </thead>
+  <tbody>
+     <tr *ngFor="let account of this.accounts; trackBy: trackAccount">
+      <td>{{account.accountNumber}}</td>
+      <td>{{account.customerReference.surname}}, {{account.customerReference.name}}</td>
+      <td>{{account.balance}}</td>
+      <td>
+        <button type="button" [routerLink]="['/account-details', account.accountNumber]" routerLinkActive="active">Transactions</button> &nbsp;
+        <button type="button"  [routerLink]="['/create-new-account', account.customerReference.customerId]" routerLinkActive="active">New Account</button>&nbsp;
+        <button type="button" [routerLink]="['/create-transaction', account.accountNumber]" routerLinkActive="active">Create Transactions</button> &nbsp;
+      </td>
+     </tr>
+  </tbody>
+</table>
+
+
